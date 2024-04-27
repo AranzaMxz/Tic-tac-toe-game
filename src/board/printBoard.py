@@ -17,7 +17,7 @@ def getValues(size):
     #print(valuesMatrix)
     return valuesMatrix
 
-def __printBoard(size, values):
+def print_Board(size, values):
     print("\n")
     
     for i in range(size):
@@ -59,6 +59,6 @@ def __printBoard(size, values):
 def getBoard(size):
     #matrix = matrixCreate(size)
     values = getValues(size)
-    __printBoard(size, values)
+    print_Board(size, values)
     #return matrix
 #getMatrix(5)
