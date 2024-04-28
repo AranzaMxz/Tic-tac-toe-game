@@ -1,6 +1,6 @@
 import numpy as np
 from board.printBoard import print_Board
-from game.rules import verificateSelection
+from game.rules import inputAccepted
 
 
 def getValues(size):
@@ -26,8 +26,8 @@ def start(boardSize, player1, player2):
         while True:
             try:
                 selection = int(input (player1.name + ": "))
-                if verificateSelection(selection, boardSize):
-                    return selection, player1
+                if inputAccepted(selection, boardSize):
+                    return selection,values, player1
             except ValueError:
                 print("Only numbers! Try again")
 
@@ -35,7 +35,7 @@ def start(boardSize, player1, player2):
         while True:
             try:
                 selection = int(input (player2.name + ": "))
-                if verificateSelection(selection, boardSize):
-                    return selection, player2
+                if inputAccepted(selection, boardSize):
+                    return selection, values, player2
             except ValueError:
                 print("Only numbers! Try again")
