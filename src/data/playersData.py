@@ -27,7 +27,7 @@ def getNames():
         else:
             print("\n\t    Player 2")
             while True:
-                name2 = input("Enter your name (max 10 characters):")  
+                name2 = input("Enter your name (max 10 characters, no spacing):")  
                 if len(name2) > 10:
                     print("Too long! Try again")
                 elif not name2.isalpha():
