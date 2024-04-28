@@ -14,15 +14,15 @@ def nextSelection(nextPlayer, boardSize):
                     return selection
             except ValueError:
                 print("Only numbers! Try again")
-def checkWin( moves, winningList):
-    # Generate all combinations of 3 moves
-    move_permutations = permutations(moves, 3)
+def checkWin( moves, winningList, sizeWinner):
+    # Generate all permutations of 3 moves
+    move_permutations = permutations(moves, sizeWinner)
 
-    # Check if any combination is in the list of winning combinations
+    # Check if any permutation is in the list of winning plays
     for move_perm in move_permutations:
         #print("Movements: ", move_perm)
         if list(move_perm) in winningList:
-         #   print("Movement found: ", move_perm)
+            #print("Movement found: ", move_perm)
             return True
     return False
         
@@ -39,11 +39,11 @@ def isFull(values, sizeWinner):
         return False
     
 def gameOver (values, player, moves,  winningList, sizeWinner):
-    if len(moves) < 3:
+    if len(moves) < sizeWinner:
         #print(len(moves))
         return False
     else:
-        if checkWin(moves, winningList):
+        if checkWin(moves, winningList, sizeWinner):
             print("Congratulations " + player.name + ", you won!")
             return True
         elif isFull(values, sizeWinner):
