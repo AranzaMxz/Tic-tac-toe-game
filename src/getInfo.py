@@ -1,5 +1,5 @@
 from board.board_info import getBoardSize
-from data.winData import winPlays
+from data.winningData import winningPlays
 from data.playersData import getData
 
 
@@ -8,7 +8,7 @@ def info():
     boardSize = getBoardSize()
 
     # Determinate the plays winners
-    winList = winPlays(boardSize)
+    winningList = winningPlays(boardSize)
 
     # Get players information
     player1,player2 = getData() 
@@ -16,4 +16,4 @@ def info():
     player1.showData()
     player2.showData()
 
-    return boardSize, winList, player1, player2
+    return boardSize, winningList, player1, player2
