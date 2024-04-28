@@ -48,6 +48,7 @@ def gameOver (values, player, moves,  winningList, sizeWinner):
     else:
         if checkWin(moves, winningList, sizeWinner):
             print("Congratulations " + player.name + ", you won!")
+            player.playswon += 1
             return True
         elif isFull(values, sizeWinner):
             print("No one won, it´s a tie")

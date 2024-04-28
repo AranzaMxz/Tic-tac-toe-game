@@ -5,5 +5,6 @@ class player:
         self.name = name
         self.piece = piece
         self.moves = []
+        self.playswon = 0
     def showData(self):
         print("Player " + self.nplayer +": " + self.name + " your piece is " + self.piece)

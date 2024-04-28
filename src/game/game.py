@@ -3,11 +3,15 @@ from board.printBoard import print_Board
 from game.rules import gameOver
 from game.inputs import putPiece
 from game.inputs import nextSelection
-
+from game.scores import scores
     
 def game(boardSize, winningList, player1, player2):
     global values
-    print("\n\t    LET´S START\n")
+    # Print the scores 
+    scores(player1, player2)
+
+    #    Starts the game
+    print("\n\t     LET´S START\n")
     
     # Determinate who starts the game
     selection, values, player = start(boardSize, player1, player2)
@@ -61,7 +65,8 @@ def game(boardSize, winningList, player1, player2):
                 player2.moves = []
                 game(boardSize, winningList, player1, player2)
             elif playAgain == "n" or playAgain == "N":
-                print("Thanks for play!")
+                scores(player1, player2)
+                print("\nThanks for play!\n")
                 break
             else:
                 print("That´s not allow. Try again")
