@@ -17,7 +17,7 @@ def getPiece(name1):
     
 def getNames():
     # Get the names of players
-    print("\t    Player 1")
+    print("\n\t    Player 1")
     while True:
         name1 = input("Enter your name (max 10 characters, no spacing):")
         if len(name1) > 10:

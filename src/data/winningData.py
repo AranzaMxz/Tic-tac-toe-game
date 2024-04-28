@@ -1,4 +1,5 @@
 
+# Determinate the winning plays
 def winningPlays(n):
     winningList = []
     # Rows and columns
