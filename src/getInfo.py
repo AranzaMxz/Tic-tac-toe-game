@@ -7,10 +7,10 @@ def info():
     # Determinate the board size
     boardSize = getBoardSize()
 
-    # Determinate the winners plays
+    # Determinate the winning plays
     winningList = winningPlays(boardSize)
 
-    # Get players information
+    # Get players' information
     player1,player2 = getData() 
     print()
     player1.showData()

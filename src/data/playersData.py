@@ -32,6 +32,10 @@ def getNames():
                     print("Too long! Try again")
                 elif not name2.isalpha():
                     print("Invalid input! Please, enter a valid name")
+                # If you want to play vs the computer, type COMPUTER as Player 2
+                elif name2 == "COMPUTER":
+                    print("\nYou will play against the computer, good luck!")
+                    return name1,name2
                 else:
                     return name1,name2
 
@@ -46,4 +50,3 @@ def getData():
     #player2.showData()
 
     return player1,player2
-

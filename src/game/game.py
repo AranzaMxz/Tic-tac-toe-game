@@ -7,7 +7,7 @@ from game.scores import scores
     
 def game(boardSize, winningList, player1, player2):
     global values
-    # Print the scores 
+    # Print the scores
     scores(player1, player2)
 
     #    Starts the game
@@ -40,7 +40,7 @@ def game(boardSize, winningList, player1, player2):
         #print(nextPlayer.name + " you chose ", selection)
 
         if not putPiece(boardSize, selection, values, nextPlayer):
-            print("Place already filled. Try again")
+            print("Place is already full. Try again")
         else:
             print_Board(boardSize, values)
 
@@ -66,14 +66,9 @@ def game(boardSize, winningList, player1, player2):
                 game(boardSize, winningList, player1, player2)
             elif playAgain == "n" or playAgain == "N":
                 scores(player1, player2)
-                print("\nThanks for play!\n")
+                print("\nThanks for playing!\n")
                 break
             else:
-                print("That´s not allow. Try again")
+                print("That´s not allowed. Try again")
         except ValueError:
-            print("That´s not allow! try again")
-
-        
-
-
-
+            print("That´s not allowed! try again")

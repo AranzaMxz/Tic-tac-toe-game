@@ -6,6 +6,6 @@ def getBoardSize():
             size = int(input("\nWrite the board size (min 3): "))
             if size >= 3:    
                 return size
-            print("The minium is 3. Try again\n")
+            print("The minimum is 3. Try again\n")
         except ValueError:
-            print("That´s not allow! Try again")
+            print("That´s not allowed! Try again")
