@@ -7,6 +7,7 @@ print("---------------------------------------------------")
 print("\n\t             TIC TAC TOE  \n")
 print("---------------------------------------------------")
 print("Choose the game mode")
+print("1. Player vs player\n2. Player vs computer\n")
 mode = isNumber()
 
 print("\t         Instructions")

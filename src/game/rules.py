@@ -10,7 +10,6 @@ def inputAccepted(selection, boardSize):
         return True
 
 def isNumber():
-    print("1. Player vs player\n2. Player vs computer\n")
     while True:
         try:
             mode = int(input("Selection: "))
