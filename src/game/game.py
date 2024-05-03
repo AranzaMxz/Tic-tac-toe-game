@@ -4,6 +4,7 @@ from game.rules import gameOver
 from game.inputs import putPiece
 from game.inputs import nextSelection
 from game.scores import scores
+from game.rules import playsMoves
     
 def game(boardSize, winningList, player1, player2):
     global values
@@ -15,6 +16,7 @@ def game(boardSize, winningList, player1, player2):
     
     # Determinate who starts the game
     selection, values, player = start(boardSize, player1, player2)
+    blankPositions = playsMoves(values)
 
     # Put the first piece in the board
     putPiece(boardSize, selection, values, player)
@@ -34,8 +36,10 @@ def game(boardSize, winningList, player1, player2):
     
     # Cicle of the game until game over is False
     while not gameOver(values, player, moves, winningList, boardSize):
-        
-        # Get the next selection
+        # See where are the blanks spaces
+        blankPositions = playsMoves(values)
+
+        # Gets the next selection
         selection = nextSelection(nextPlayer, boardSize) 
         #print(nextPlayer.name + " you chose ", selection)
 

@@ -3,7 +3,7 @@ from data.winningData import winningPlays
 from data.playersData import getData
 
 
-def info():
+def info(mode):
     # Determinate the board size
     boardSize = getBoardSize()
 
@@ -11,7 +11,7 @@ def info():
     winningList = winningPlays(boardSize)
 
     # Get players information
-    player1,player2 = getData() 
+    player1,player2 = getData(mode) 
     print()
     player1.showData()
     player2.showData()

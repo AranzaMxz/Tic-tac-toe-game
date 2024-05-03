@@ -15,7 +15,7 @@ def getPiece(name1):
 
     return figureP1,figureP2
     
-def getNames():
+def getNames(mode):
     # Get the names of players
     print("\n\t    Player 1")
     while True:
@@ -27,16 +27,22 @@ def getNames():
         else:
             print("\n\t    Player 2")
             while True:
-                name2 = input("Enter your name (max 10 characters, no spacing):")  
-                if len(name2) > 10:
-                    print("Too long! Try again")
-                elif not name2.isalpha():
-                    print("Invalid input! Please, enter a valid name")
-                else:
-                    return name1,name2
+                if mode == 1:
+                    name2 = input("Enter your name (max 10 characters, no spacing):")  
+                    if len(name2) > 10:
+                        print("Too long! Try again")
+                    elif not name2.isalpha():
+                        print("Invalid input! Please, enter a valid name")
+                    else:
+                        break
+                elif mode == 2:
+                    name2 = "Computer"
+                    print("Player's 2 name: ", name2)
+                    break
+            return name1,name2
 
-def getData():
-    name1, name2 = getNames()
+def getData(mode):
+    name1, name2 = getNames(mode)
     pieceP1,pieceP2 = getPiece(name1)
 
     player1 = player("1", name1, pieceP1)

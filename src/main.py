@@ -1,10 +1,14 @@
 from game.game import game
 from board.printBoard import getBoard
 from getInfo import info
+from game.rules import isNumber
 
 print("---------------------------------------------------")
 print("\n\t             TIC TAC TOE  \n")
 print("---------------------------------------------------")
+print("Choose the game mode")
+mode = isNumber()
+
 print("\t         Instructions")
 print("1. Enter the board size")
 print("2. Enter the names players")
@@ -14,7 +18,7 @@ print("5. Starts the player who chose X")
 print("6. THE PLAYER WHO COMPLETES n PIECES TOGETHER WINS")
 
 # Get information to start the game
-boardSize, winningList, player1, player2 = info()
+boardSize, winningList, player1, player2 = info(mode)
 
 # Print the board reference
 board = getBoard(boardSize)

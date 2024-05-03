@@ -1,3 +1,4 @@
+import numpy as np
 from itertools import permutations
 
 # Verificate the enter number is in the range 
@@ -8,12 +9,29 @@ def inputAccepted(selection, boardSize):
     else:
         return True
 
+def isNumber():
+    print("1. Player vs player\n2. Player vs computer\n")
+    while True:
+        try:
+            mode = int(input("Selection: "))
+            if mode == 1 or mode == 2:
+                return mode
+            else:
+                 print("That´s not an option. Try again")           
+        except ValueError:
+            print("Just numbers!")
+
 # Check if the space is free
 def isFree(row, col, values):
     if values[row][col] == '  ':
         return True
     else:
         return False
+
+# Return the positions of blank spaces
+def playsMoves(values):
+    positions = np.where(values == '  ')
+    return positions
 
 # Check if the board is full
 def isFull(values, sizeWinner):
